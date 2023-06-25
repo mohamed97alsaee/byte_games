@@ -1,10 +1,8 @@
 import 'dart:convert';
 
 import 'package:byte_games/models/game_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart' as http;
 
 import '../widgets/game_card.dart';
@@ -23,7 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
         await http.get(Uri.parse('https://www.freetogame.com/api/games'));
 
     if (response.statusCode == 200) {
-      print('✅🫡');
+      if (kDebugMode) {
+        print('✅🫡');
+      }
       var decodedData = json.decode(response.body);
 
       for (var item in decodedData) {
@@ -31,7 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
       }
       setState(() {});
     } else {
-      print("❌");
+      if (kDebugMode) {
+        print("❌");
+      }
     }
   }
 
