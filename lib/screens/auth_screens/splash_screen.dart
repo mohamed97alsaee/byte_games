@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:byte_games/screens/home_screen.dart';
+import 'package:byte_games/screens/auth_screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(const Duration(seconds: 5), () {
       Navigator.push(context,
-          CupertinoPageRoute(builder: (context) => const HomeScreen()));
+          CupertinoPageRoute(builder: (context) => const LoginScreen()));
     });
     super.initState();
   }

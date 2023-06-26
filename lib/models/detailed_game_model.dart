@@ -59,8 +59,21 @@ class DetailedGameModel {
         developer: json["developer"],
         releaseDate: json["release_date"],
         freetogameProfileUrl: json["freetogame_profile_url"],
-        minimumSystemRequirements: MinimumSystemRequirements.fromJson(
-            json["minimum_system_requirements"]),
+
+
+
+
+
+        minimumSystemRequirements: json["minimum_system_requirements"] == null ?
+         null : MinimumSystemRequirements.fromJson(json["minimum_system_requirements"]),
+
+
+
+
+
+
+
+
         screenshots: List<Screenshot>.from(
             json["screenshots"].map((x) => Screenshot.fromJson(x))),
       );
@@ -79,7 +92,8 @@ class DetailedGameModel {
         "developer": developer,
         "release_date": releaseDate,
         "freetogame_profile_url": freetogameProfileUrl,
-        "minimum_system_requirements": minimumSystemRequirements!.toJson(),
+        "minimum_system_requirements":
+            minimumSystemRequirements ?? minimumSystemRequirements!.toJson(),
         "screenshots": List<dynamic>.from(screenshots.map((x) => x.toJson())),
       };
 }

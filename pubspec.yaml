@@ -37,7 +37,9 @@ dependencies:
   flutter_svg:
   google_fonts:
   http:
-
+  provider: ^5.0.0
+  path_provider:
+  shared_preferences:
 dev_dependencies:
   flutter_test:
     sdk: flutter

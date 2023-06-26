@@ -2,7 +2,7 @@ import 'package:byte_games/models/game_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/destailed_game_screen.dart';
+import '../screens/main_screens/destailed_game_screen.dart';
 
 class GameCard extends StatefulWidget {
   const GameCard({super.key, required this.gameModel});
